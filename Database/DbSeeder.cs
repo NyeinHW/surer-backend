@@ -18,8 +18,8 @@ namespace surer_backend.Database
                 user1.FirstName = "nyein";
                 user1.LastName = "wai";
                 user1.Email = "nhw@gmail.com";
-                user1.Password = MD5Hash.GetMd5Hash(md5Hash, "123");
-                user1.ContactNumber = 1234;
+                user1.Password = MD5Hash.GetMd5Hash(md5Hash, "123456");
+                user1.ContactNumber = 811997330;
                 dbcontext.Add(user1);
                 dbcontext.SaveChanges();
             }
