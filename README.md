@@ -1,4 +1,4 @@
 # surer-backend
 Database Connection
-appsettings.json
+In appsettings.json
 change local server and database name in DbConn
