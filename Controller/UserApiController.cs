@@ -20,8 +20,6 @@ namespace surer_backend.Controller
     [ApiController]
     public class UserApiController : ControllerBase
     {
-        // GET: api/<controller>
-
         protected SurerContext dbcontext;
         private readonly IJWTAuthenticationManager jWTAuthenticationManager;
 
@@ -29,14 +27,6 @@ namespace surer_backend.Controller
         {
             this.dbcontext = dbcontext;
             this.jWTAuthenticationManager = jWTAuthenticationManager;
-        }
-        [HttpGet]
-        [Route("api/[controller]/viewUsers")]
-        public ActionResult viewUsers()
-        {
-            List<User> users = dbcontext.User.ToList();
-            return Content(JsonConvert.SerializeObject(users));
-
         }
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
@@ -129,6 +119,7 @@ namespace surer_backend.Controller
 
             }
         }
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
         [Route("api/[controller]/getCarPark")]
         public  async Task<IActionResult> ViewCarPark()
